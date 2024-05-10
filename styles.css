@@ -1,0 +1,160 @@
+:root {
+  --primary-color: #3498db;    /* Define a primary color for the website */
+  --secondary-color: #3498db;  /* Define a secondary color for the website */
+  --text-color: #333;          /* Define a text color */
+}
+
+/* Menu styling */
+.menu-container {
+  width: 100%; /* Change to full width */
+  max-width: 1152px; /* Set max width */
+  margin: 0 auto;
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-wrapper ul.nav-list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-wrapper ul.nav-list li {
+  position: relative;
+
+}
+
+.nav-wrapper ul.nav-list li a {
+  color: var(--text-color); /* Use the defined text color */
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.5s ease-in-out;
+  padding: 20px 0;
+  margin-left: 30px;
+}
+
+.nav-wrapper ul.nav-list li a:hover,
+.nav-wrapper ul.nav-list li.active a {
+  color: var(--primary-color); /* Use the defined primary color for hovered and active links */
+}
+
+.nav-wrapper ul.dropdown-list {
+  list-style-type: none;
+  background: var(--secondary-color); /* Use the defined secondary color for dropdown background */
+  padding: 6px 12px;
+  position: absolute;
+  width: max-content;
+  z-index: 9999;
+  left: 60%;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+
+.nav-wrapper ul.dropdown-list li {
+  padding: 5px 0;
+}
+
+.nav-wrapper ul.dropdown-list li a {
+  color: var(--text-color);
+}
+
+.nav-wrapper ul.nav-list li:hover .dropdown-list {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-wrapper .nav-list li .btn a {
+  color: var(--secondary-color); /* Use the defined secondary color for buttons */
+}
+
+.nav-wrapper .nav-list li .btn:hover a {
+  color: var(--text-color); /* Use the defined text color for button hover */
+}
+
+/* Responsive menu */
+.hamberger {
+  display: none;
+}
+
+.mobile .hamberger {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  cursor: pointer;
+}
+
+.mobile .hamberger span {
+  background: var(--text-color); /* Use the defined text color for hamberger icon */
+  width: 28px;
+  height: 2px;
+  margin-bottom: 8px;
+}
+
+.mobile ul.nav-list {
+  background: linear-gradient(45deg, #f5f6fa, #dcdde1); /* Fallback for older browsers */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.mobile .nav-wrapper ul li {
+  text-align: center;
+}
+
+.mobile ul.dropdown-list {
+  position: relative;
+  background:transparent;
+  text-align: center;
+  height: 0;
+  overflow-y: hidden;
+  transition: height 0.5s ease-in-out;
+}
+
+.mobile .nav-wrapper ul li:hover .dropdown-list {
+  height: auto;
+}
+
+.mobile .nav-wrapper ul.dropdown-list li a {
+  color: #7f8fa6; /* Default color for dropdown links */
+}
+
+.mobile .nav-wrapper ul.dropdown-list li a:hover {
+  color: var(--text-color); /* Use the defined text color for dropdown links hover */
+}
+
+/* Media Queries for Responsiveness */
+
+/* For devices with a maximum width of 768px */
+@media only screen and (max-width: 768px) {
+  .menu-container {
+    padding: 0 15px; /* Add padding to the sides */
+  }
+  
+  .nav-wrapper ul.nav-list li a {
+    margin-left: 15px; /* Decrease the margin for smaller screens */
+  }
+}
+
+
+
+
+
+  
